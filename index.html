@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Freshers Day 2026 | Sri Chaitanya Jr Kalasala</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#04000c;
+    color:#fff;
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    top:-180px;
+    left:-180px;
+    background:#7b2cff;
+    filter:blur(170px);
+    opacity:.28;
+    z-index:-5;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    bottom:-200px;
+    right:-180px;
+    background:#00e5ff;
+    filter:blur(170px);
+    opacity:.20;
+    z-index:-5;
+}
+
+/* PARTICLES */
+
+.particle{
+    position:fixed;
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background:#fff;
+    opacity:.5;
+    z-index:-1;
+    animation:float 8s infinite ease-in-out;
+}
+
+.p1{left:8%;top:20%}
+.p2{left:20%;top:65%;animation-delay:2s}
+.p3{left:34%;top:30%;animation-delay:4s}
+.p4{left:50%;top:75%;animation-delay:1s}
+.p5{left:68%;top:20%;animation-delay:3s}
+.p6{left:83%;top:60%;animation-delay:5s}
+.p7{left:92%;top:12%;animation-delay:2s}
+.p8{left:44%;top:12%;animation-delay:6s}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+        opacity:.2;
+    }
+
+    50%{
+        transform:translateY(-60px);
+        opacity:1;
+    }
+}
+
+/* OPENING SCREEN */
+
+#opening{
+    position:fixed;
+    inset:0;
+    background:#030008;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+    transition:1s;
+}
+
+.open-content{
+    text-align:center;
+    padding:20px;
+}
+
+.open-content small{
+    color:#00e5ff;
+    letter-spacing:6px;
+}
+
+.open-content h1{
+    font-family:'Orbitron',sans-serif;
+    font-size:clamp(50px,10vw,110px);
+    margin:15px 0;
+    background:linear-gradient(
+        90deg,
+        #00e5ff,
+        #a64cff,
+        #ff3cac
+    );
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.open-content p{
+    color:#aaa;
+    letter-spacing:6px;
+    margin-bottom:35px;
+}
+
+.enter-btn{
+    border:1px solid #00e5ff;
+    background:transparent;
+    color:white;
+    padding:15px 40px;
+    border-radius:50px;
+    font-size:15px;
+    letter-spacing:2px;
+    cursor:pointer;
+    transition:.4s;
+}
+
+.enter-btn:hover{
+    background:#00e5ff;
+    color:#000;
+    box-shadow:0 0 35px #00e5ff;
+}
+
+/* MUSIC BUTTON */
+
+.music{
+    position:fixed;
+    right:20px;
+    top:20px;
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.3);
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    color:#fff;
+    cursor:pointer;
+    z-index:100;
+}
+
+/* MAIN */
+
+.wrapper{
+    width:100%;
+    max-width:1050px;
+    margin:auto;
+    padding:30px 20px 80px;
+}
+
+/* HERO */
+
+.hero{
+    min-height:720px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+}
+
+.hero-tag{
+    color:#00e5ff;
+    letter-spacing:5px;
+    font-size:13px;
+}
+
+.hero h1{
+    font-family:'Orbitron',sans-serif;
+    font-size:clamp(55px,11vw,125px);
+    line-height:.9;
+    margin:25px 0;
+    background:linear-gradient(
+        90deg,
+        #fff,
+        #00e5ff,
+        #b75cff,
+        #ff3cac
+    );
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero-year{
+    font-size:22px;
+    letter-spacing:10px;
+    color:#aaa;
+}
+
+.hero-line{
+    width:140px;
+    height:3px;
+    margin:35px auto;
+    border-radius:20px;
+    background:linear-gradient(
+        90deg,
+        #00e5ff,
+        #b75cff,
+        #ff3cac
+    );
+    box-shadow:0 0 20px #7b2cff;
+}
+
+.hero-text{
+    max-width:650px;
+    color:#aaa;
+    line-height:1.9;
+}
+
+/* PHOTO */
+
+.big-photo{
+    width:100%;
+    height:430px;
+    overflow:hidden;
+    border-radius:35px;
+    border:1px solid rgba(255,255,255,.15);
+    margin-bottom:100px;
+    position:relative;
+}
+
+.big-photo::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        transparent 50%,
+        rgba(0,0,0,.5)
+    );
+}
+
+.big-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.8s;
+}
+
+.big-photo:hover img{
+    transform:scale(1.05);
+}
+
+/* SECTION */
+
+.section{
+    margin-bottom:110px;
+}
+
+.section-number{
+    color:#00e5ff;
+    font-family:'Orbitron',sans-serif;
+    letter-spacing:4px;
+    font-size:12px;
+    margin-bottom:15px;
+}
+
+.section h2{
+    font-family:'Orbitron',sans-serif;
+    font-size:clamp(30px,6vw,60px);
+    line-height:1.1;
+    margin-bottom:25px;
+}
+
+.section h2 span{
+    color:#00e5ff;
+}
+
+.section-description{
+    color:#999;
+    max-width:700px;
+    line-height:1.9;
+}
+
+/* EVENT CARDS */
+
+.event-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-top:40px;
+}
+
+.event-card{
+    padding:30px 20px;
+    border-radius:25px;
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.1);
+    transition:.4s;
+}
+
+.event-card:hover{
+    transform:translateY(-10px);
+    border-color:#00e5ff;
+    box-shadow:0 0 30px rgba(0,229,255,.12);
+}
+
+.event-icon{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.event-card small{
+    display:block;
+    color:#777;
+    letter-spacing:2px;
+    margin-bottom:7px;
+}
+
+.event-card strong{
+    font-size:15px;
+}
+
+/* GUESTS */
+
+.guest-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+    margin-top:40px;
+}
+
+.guest-card{
+    text-align:center;
+    padding:35px 20px;
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:30px;
+    transition:.4s;
+}
+
+.guest-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 35px rgba(123,44,255,.18);
+}
+
+.guest-img{
+    width:180px;
+    height:180px;
+    margin:auto;
+    padding:4px;
+    border-radius:50%;
+    background:linear-gradient(
+        135deg,
+        #00e5ff,
+        #9b4dff,
+        #ff3cac
+    );
+}
+
+.guest-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+    background:#111;
+}
+
+.guest-card h3{
+    margin-top:20px;
+    font-size:18px;
+}
+
+.guest-card p{
+    color:#00e5ff;
+    margin-top:5px;
+}
+
+/* HIGHLIGHTS */
+
+.highlight-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-top:40px;
+}
+
+.highlight{
+    text-align:center;
+    padding:30px 15px;
+    border-radius:22px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.highlight .emoji{
+    font-size:35px;
+}
+
+.highlight h3{
+    margin:12px 0 7px;
+}
+
+.highlight p{
+    color:#888;
+    font-size:12px;
+    line-height:1.6;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-top:40px;
+}
+
+.gallery-item{
+    height:260px;
+    overflow:hidden;
+    border-radius:22px;
+    border:1px solid rgba(255,255,255,.12);
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.1);
+}
+
+/* QUOTE */
+
+.quote{
+    padding:70px 30px;
+    text-align:center;
+    border-radius:35px;
+    background:linear-gradient(
+        135deg,
+        rgba(0,229,255,.06),
+        rgba(123,44,255,.1),
+        rgba(255,60,172,.06)
+    );
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.quote p{
+    font-family:'Orbitron',sans-serif;
+    font-size:clamp(22px,4vw,40px);
+    line-height:1.5;
+}
+
+.quote span{
+    color:#00e5ff;
+}
+
+/* FINAL */
+
+.final{
+    min-height:600px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.final-box{
+    width:100%;
+    padding:80px 25px;
+    border-radius:40px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,229,255,.08),
+            rgba(123,44,255,.1),
+            rgba(255,60,172,.08)
+        );
+    border:1px solid rgba(255,255,255,.12);
+}
+
+.final-box small{
+    color:#00e5ff;
+    letter-spacing:5px;
+}
+
+.final-box h2{
+    font-family:'Orbitron',sans-serif;
+    font-size:clamp(40px,8vw,80px);
+    line-height:1;
+    margin:25px 0;
+}
+
+.final-box h2 span{
+    background:linear-gradient(
+        90deg,
+        #00e5ff,
+        #ff3cac
+    );
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.final-date{
+    font-size:22px;
+    letter-spacing:6px;
+}
+
+.final-venue{
+    color:#999;
+    margin-top:15px;
+    letter-spacing:3px;
+}
+
+.footer{
+    text-align:center;
+    color:#555;
+    padding:40px 0;
+    font-size:12px;
+}
+
+/* CONFETTI */
+
+.confetti{
+    position:fixed;
+    width:8px;
+    height:14px;
+    top:-20px;
+    z-index:9998;
+    animation:fall 4s linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:0;
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:750px){
+
+    .wrapper{
+        padding:15px 15px 50px;
+    }
+
+    .hero{
+        min-height:600px;
+    }
+
+    .big-photo{
+        height:280px;
+        border-radius:25px;
+        margin-bottom:70px;
+    }
+
+    .event-grid{
+        grid-template-columns:1fr;
+    }
+
+    .guest-grid{
+        grid-template-columns:1fr;
+    }
+
+    .highlight-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-item{
+        height:300px;
+    }
+
+    .section{
+        margin-bottom:75px;
+    }
+}
+
+@media(max-width:450px){
+
+    .highlight-grid{
+        grid-template-columns:1fr;
+    }
+
+    .guest-img{
+        width:150px;
+        height:150px;
+    }
+
+    .hero h1{
+        font-size:58px;
+    }
+
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- PARTICLES -->
+
+<div class="particle p1"></div>
+<div class="particle p2"></div>
+<div class="particle p3"></div>
+<div class="particle p4"></div>
+<div class="particle p5"></div>
+<div class="particle p6"></div>
+<div class="particle p7"></div>
+<div class="particle p8"></div>
+
+
+<!-- OPENING -->
+
+<div id="opening">
+
+    <div class="open-content">
+
+        <small>SRI CHAITANYA JR KALASALA</small>
+
+        <h1>FRESHERS</h1>
+
+        <p>DAY • 2026</p>
+
+        <button class="enter-btn" onclick="enterParty()">
+            ✦ TAP TO ENTER ✦
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- MUSIC BUTTON -->
+
+<button class="music" onclick="toggleMusic()" id="musicBtn">
+    🎵
+</button>
+
+
+<!-- MAIN -->
+
+<div class="wrapper">
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-tag">
+        
+        YOU ARE CORDIALLY INVITED TO
+    </div>
+
+    <h1>FRESHERS</h1>
+
+    <div class="hero-year">
+        DAY • 2026
+    </div>
+
+    <div class="hero-line"></div>
+
+    <p class="hero-text">
+        A new journey begins with new faces,
+        new friendships and unforgettable memories.
+        Join us as we welcome the newest members
+        of the Sri Chaitanya family.
+    </p>
+
+</section>
+
+
+<!-- COLLEGE PHOTO -->
+
+<div class="big-photo">
+
+    <img
+        src="college.jpg"
+        alt="Sri Chaitanya Jr Kalasala"
+    >
+
+</div>
+
+
+<!-- EVENT DETAILS -->
+
+<section class="section">
+
+    <div class="section-number">
+        01 / EVENT
+    </div>
+
+    <h2>
+        SAVE THE<br>
+        <span>DATE.</span>
+    </h2>
+
+    <p class="section-description">
+        Mark your calendar and get ready for an evening
+        filled with celebration, entertainment, friendship
+        and memories that will stay with us for years.
+    </p>
+
+
+    <div class="event-grid">
+
+        <div class="event-card">
+
+            <div class="event-icon">🗓️</div>
+
+            <small>DATE</small>
+
+            <strong>
+                11 SEPTEMBER 2026
+            </strong>
+
+        </div>
+
+
+        <div class="event-card">
+
+            <div class="event-icon">📍</div>
+
+            <small>VENUE</small>
+
+            <strong>
+                MEKALA CONVENTION
+            </strong>
+
+        </div>
+
+
+        <div class="event-card">
+
+            <div class="event-icon">🎓</div>
+
+            <small>EVENT</small>
+
+            <strong>
+                FRESHERS DAY
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GUESTS -->
+
+<section class="section">
+
+    <div class="section-number">
+        02 / HONOURED PRESENCE
+    </div>
+
+    <h2>
+        OUR ESTEEMED<br>
+        <span>GUESTS.</span>
+    </h2>
+
+    <p class="section-description">
+        We are honoured to welcome the distinguished
+        members of our institution whose presence makes
+        this celebration even more special.
+    </p>
+
+
+    <div class="guest-grid">
+
+
+        <div class="guest-card">
+
+            <div class="guest-img">
+
+                <img
+                    src="agm.jpg"
+                    alt="Ravi Kumar Sir"
+                >
+
+            </div>
+
+            <h3>
+                Ravi Kumar Sir
+            </h3>
+
+            <p>
+                AGM
+            </p>
+
+        </div>
+
+
+        <div class="guest-card">
+
+            <div class="guest-img">
+
+                <img
+                    src="dean.jpg"
+                    alt="Balakrishna Garu"
+                >
+
+            </div>
+
+            <h3>
+                Balakrishna Garu
+            </h3>
+
+            <p>
+                Dean
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+<!-- Our Esteemed Principal Sir -->
+
+<section class="section">
+
+    <div class="section-number">
+        3/ HONOURED PRESENCE
+    </div>
+
+    <h2>
+        OUR ESTEEMED<br>
+        <span>Principal Sir.</span>
+    </h2>
+
+    <p class="section-description">
+        We are honoured to welcome the distinguished
+        members of our institution whose presence makes
+        this celebration even more special.
+    </p>
+
+
+    <div class="guest-grid">
+
+
+        <div class="guest-card">
+
+            <div class="guest-img">
+
+                <img
+                    src="principal.jpg"
+                    alt="Veera Babu Garu"
+                >
+
+            </div>
+
+            <h3>
+                Veera Babu Sir
+            </h3>
+
+            <p>
+                Principal
+            </p>
+
+        </div>
+
+
+
+</section>
+
+
+<!-- HIGHLIGHTS -->
+
+<section class="section">
+
+    <div class="section-number">
+        03 / WHAT AWAITS
+    </div>
+
+    <h2>
+        LET THE<br>
+        <span>CELEBRATION BEGIN.</span>
+    </h2>
+
+
+    <div class="highlight-grid">
+
+
+        <div class="highlight">
+
+            <div class="emoji">🎵</div>
+
+            <h3>Music</h3>
+
+            <p>
+                Feel the rhythm and enjoy
+                the celebration.
+            </p>
+
+        </div>
+
+
+        <div class="highlight">
+
+            <div class="emoji">💃</div>
+
+            <h3>Dance</h3>
+
+            <p>
+                Bring your energy and
+                make the floor yours.
+            </p>
+
+        </div>
+
+
+        <div class="highlight">
+
+            <div class="emoji">🎤</div>
+
+            <h3>Fun</h3>
+
+            <p>
+                Enjoy exciting moments
+                with your friends.
+            </p>
+
+        </div>
+
+
+        <div class="highlight">
+
+            <div class="emoji">🎊</div>
+
+            <h3>Memories</h3>
+
+            <p>
+                Create moments that
+                last forever.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="section">
+
+    <div class="section-number">
+        04 / MEMORIES
+    </div>
+
+    <h2>
+        MOMENTS<br>
+        <span>TO REMEMBER.</span>
+    </h2>
+
+    <p class="section-description">
+        Add your favourite college moments,
+        student photos and celebration memories here.
+    </p>
+
+
+    <div class="gallery">
+
+
+        <div class="gallery-item">
+            <img src="freshers1.jpg">
+        </div>
+
+
+        <div class="gallery-item">
+            <img src="freshers2.jpg">
+        </div>
+
+
+        <div class="gallery-item">
+            <img src="freshers3.jpg">
+        </div>
+
+
+        <div class="gallery-item">
+            <img src="freshers4.jpg">
+        </div>
+
+
+        <div class="gallery-item">
+            <img src="freshers5.jpg">
+        </div>
+
+
+        <div class="gallery-item">
+            <img src="freshers6.jpg">
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- QUOTE -->
+
+<section class="section">
+
+    <div class="quote">
+
+        <p>
+            "Every great journey<br>
+            begins with a <span>first step.</span>"
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section class="final">
+
+    <div class="final-box">
+
+        <small>
+            THE WAIT IS OVER
+        </small>
+
+        <h2>
+            SEE YOU AT<br>
+            THE <span>FRESHERS!</span>
+        </h2>
+
+        <div class="final-date">
+            11 • 09 • 2026
+        </div>
+
+        <div class="final-venue">
+            MEKALA CONVENTION
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="footer">
+
+    SRI CHAITANYA JR KALASALA • FRESHERS DAY 2026
+
+</div>
+
+
+</div>
+
+
+<!-- AUDIO -->
+
+<audio id="partyMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+
+<script>
+
+/* OPEN INVITATION */
+
+function enterParty(){
+
+    const opening =
+        document.getElementById("opening");
+
+    opening.style.opacity="0";
+
+    setTimeout(function(){
+
+        opening.style.display="none";
+
+        createConfetti();
+
+    },1000);
+
+}
+
+
+/* MUSIC */
+
+let playing=false;
+
+function toggleMusic(){
+
+    const music =
+        document.getElementById("partyMusic");
+
+    const button =
+        document.getElementById("musicBtn");
+
+    if(!playing){
+
+        music.play();
+
+        button.innerHTML="🔊";
+
+        playing=true;
+
+    }else{
+
+        music.p();
+
+        button.innerHTML="🎵";
+
+        playing=false;
+
+    }
+
+}
+
+
+/* CONFETTI */
+
+function createConfetti(){
+
+    for(let i=0;i<80;i++){
+
+        const piece =
+            document.createElement("div");
+
+        piece.className="confetti";
+
+        piece.style.left =
+            Math.random()*100+"vw";
+
+        piece.style.animationDelay =
+            Math.random()*2+"s";
+
+        piece.style.transform =
+            "rotate("+Math.random()*360+"deg)";
+
+        document.body.appendChild(piece);
+
+        setTimeout(function(){
+
+            piece.remove();
+
+        },5000);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
